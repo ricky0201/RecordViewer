@@ -4,11 +4,13 @@ import { receivePicklists } from '../actions'
 
 export default function* picklistsFetcher (action) {
 
-  let url = action.creds.instanceUrl + '/services/data/v43.0/ui-api/object-info/' + action.apiName + '/picklist-values/' + action.recordType + '/';
+  let url = action.creds.instanceUrl + '/services/data/v54.0/ui-api/object-info/' + action.apiName + '/picklist-values/' + action.recordType + '/';
   let req = {
     method: 'GET',
+
     headers: {
       'Authorization' : 'Bearer ' + action.creds.accessToken,
+      // 返される JSON 内の特殊文字が HTML エスケープ処理されない
       'X-Chatter-Entity-Encoding': false}
   };
 

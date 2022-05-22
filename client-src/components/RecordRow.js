@@ -112,8 +112,8 @@ const getEditComponent = (component, picklists, onFieldValueUpdate, editValues, 
           {editValues[component.field].current}
         </label>
         <button className="fa fa-pencil"
-        key={'componentInput' + itemLabel + 'button,' + i}
-        onClick={(event) => onEditDepGraph(picklists, modalFields, editValues, fieldTree, uiMode.toString())}>
+          key={'componentInput' + itemLabel + 'button,' + i}
+          onClick={(event) => onEditDepGraph(picklists, modalFields, editValues, fieldTree, uiMode.toString())}>
         </button>
       </div>
     );

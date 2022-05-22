@@ -3,11 +3,14 @@
 var bodyParser = require('body-parser')
   , config = require('./app/config')
   , cookieParser = require('cookie-parser')
+  // Node.js Web アプリケーション・フレームワーク
   , express = require('express')
   , fs = require('fs')
   , http = require('http')
   , https = require('https')
+  // HTTP request logger middleware for node.js
   , morgan = require('morgan')
+  // 静的ファイルの提供
   , serveStatic = require('serve-static')
   , session = require('express-session')
   , stylus = require('stylus');
@@ -88,7 +91,9 @@ function httpError(exception, socket) {
 
 var app = express();
 // use Pug view templates
+// __dirname : 現在実行中のソースコードが格納されているディレクトリパス
 app.set('views', __dirname + '/views');
+// Pug: HTMLを簡単に記述するためのテンプレートエンジン
 app.set('view engine', 'pug');
 
 // make JSON bodies and cookies available in req objects
